@@ -28,14 +28,14 @@ public class SortStatistics {
      * @param record        a single {@link Record} to save.
      */
     public void save(String sortSignature, Record record) {
+        List<Record> records;
         if (this.isSortNew(sortSignature)) {
-            List<Record> records = this.sortStatistics.get(sortSignature);
-            records.add(record);
+            records = this.sortStatistics.get(sortSignature);
         } else {
-            List<Record> records = new ArrayList<>();
-            records.add(record);
+            records = new ArrayList<>();
             this.sortStatistics.put(sortSignature, records);
         }
+        records.add(record);
     }
 
     /**

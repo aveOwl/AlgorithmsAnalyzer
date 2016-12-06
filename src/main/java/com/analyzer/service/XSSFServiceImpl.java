@@ -31,11 +31,16 @@ import org.apache.poi.xssf.usermodel.charts.XSSFChartLegend;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileOutputStream;
+import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
+
+import static java.nio.file.StandardOpenOption.CREATE;
 
 /**
  * <p>
@@ -49,8 +54,10 @@ import java.util.Set;
  * of the sort and the number of elements in the array.
  * </p>
  */
-public class XSSFServiceImpl {
+public class XSSFServiceImpl implements XSSFService {
     private static final Logger LOG = LoggerFactory.getLogger(XSSFServiceImpl.class);
+    private static final String FILE_NAME = "Statistics-";
+    private static final String FILE_FORMAT = ".xlsx";
     private AnalyzerService analyzerService;
 
     /**
@@ -70,6 +77,7 @@ public class XSSFServiceImpl {
      * @param strategy array spawn strategy.
      * @param path     path to save the statistics file.
      */
+    @Override
     public void writeStatistics(ArraySpawnStrategy strategy, Path path) {
         Statistics statistics = this.analyzerService.generateStatistics(strategy);
         this.writeAsXLSX(statistics, path);
@@ -112,10 +120,9 @@ public class XSSFServiceImpl {
                 sortSignatureRowIndex++;
             }
             LOG.debug("Drawing chart for {}", fillName);
-            //            Integer collCount = sortStatistics.getNumberOfRecords();
             this.drawChart(sheet, -- sortSignatureRowIndex, -- dataColumnIndex);
         }
-        this.saveWorkbook(workbook, path);
+        this.saveWorkbook(workbook, path.resolve(FILE_NAME + LocalDateTime.now() + FILE_FORMAT));
     }
 
     /**
@@ -306,7 +313,7 @@ public class XSSFServiceImpl {
      * @param path     path to save the workbook by.
      */
     private void saveWorkbook(XSSFWorkbook workbook, Path path) {
-        try (FileOutputStream out = new FileOutputStream(path.toString())) {
+        try (OutputStream out = new BufferedOutputStream(Files.newOutputStream(path, CREATE))) {
             LOG.debug("Writing statistics to file: {}", path.getFileName());
             workbook.write(out);
             out.flush();

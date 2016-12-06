@@ -29,12 +29,9 @@ import java.util.stream.Collectors;
  */
 public class AnalyzerServiceImpl implements AnalyzerService {
     private static final Logger LOG = LoggerFactory.getLogger(AnalyzerServiceImpl.class);
-
     private Reflections reflections;
-    private Statistics statistics;
 
     public AnalyzerServiceImpl() {
-        this.statistics = new Statistics();
         this.reflections = new Reflections();
     }
 
@@ -77,6 +74,7 @@ public class AnalyzerServiceImpl implements AnalyzerService {
         LOG.debug("Retrieved {} methods annotated with Filler annotation", fillerMethods.size());
         LOG.debug("Retrieved {} methods annotated with Sorter annotation", sortMethods.size());
 
+        Statistics statistics = new Statistics();
         for (Method fill : fillerMethods) {
             Object generator = fill.getDeclaringClass().newInstance();
             String fillerSignature = fill.getDeclaringClass().getSimpleName();
@@ -88,10 +86,10 @@ public class AnalyzerServiceImpl implements AnalyzerService {
                 LOG.debug("Writing SortStatistics for {} elements", elements);
                 this.writeSortStatistics(array, sortMethods, sortStatistics);
             }
-            this.statistics.save(fillerSignature, sortStatistics);
+            statistics.save(fillerSignature, sortStatistics);
             LOG.debug("For: {} saving statistics:\n{}", fillerSignature, sortStatistics);
         }
-        return this.statistics;
+        return statistics;
     }
 
     /**
