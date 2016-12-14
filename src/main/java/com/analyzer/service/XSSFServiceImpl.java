@@ -43,16 +43,12 @@ import java.util.Set;
 import static java.nio.file.StandardOpenOption.CREATE;
 
 /**
- * <p>
  * The {@code XSSFServiceImpl} is a basic implementation of the {@link XSSFService} interface.
- * </p>
- * <p>
  * Completed file consists of the table containing statistics on each {@link Sort}
  * sort method, its signature and corresponding {@link Record} records with number
  * of elements in array and CPU time taken to sort the array, computed with {@link Stopwatch}
  * clock. Also file contains line chart representing the relationship between the running time
  * of the sort and the number of elements in the array.
- * </p>
  */
 public class XSSFServiceImpl implements XSSFService {
     private static final Logger LOG = LoggerFactory.getLogger(XSSFServiceImpl.class);

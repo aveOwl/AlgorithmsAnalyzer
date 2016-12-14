@@ -5,11 +5,9 @@ import com.analyzer.sorts.Sort;
 import com.analyzer.util.ArraySpawnStrategy;
 
 /**
- * <p>
  * The {@code AnalyzerService} service provides facilities to generate a single {@link Statistics} object
  * describing performance of various {@link Sort} algorithms providing the {@link ArraySpawnStrategy}
  * to generate the arrays of different capacities.
- * </p>
  */
 @FunctionalInterface
 public interface AnalyzerService {

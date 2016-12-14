@@ -6,10 +6,8 @@ import com.analyzer.util.ArraySpawnStrategy;
 import java.nio.file.Path;
 
 /**
- * <p>
  * The {@code XSSFService} service provides facilities to manipulate and store
  * data provided by {@link Statistics} object in form of <em>excel</em> file.
- * </p>
  */
 public interface XSSFService {
 

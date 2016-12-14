@@ -1,7 +1,7 @@
 package com.analyzer.sorts;
 
 /**
- * The <code>Sort</code> interface is a functional interface
+ * The {@code Sort} interface is a functional interface
  * with single method to sort the array of {@link Comparable} items.
  */
 @FunctionalInterface

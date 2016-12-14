@@ -1,9 +1,7 @@
 package com.analyzer.generators;
 
 /**
- * <p>
  * Generates an array of {@link Comparable} elements using different strategies.
- * </p>
  */
 @FunctionalInterface
 public interface Fill {

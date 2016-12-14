@@ -3,11 +3,9 @@ package com.analyzer.util;
 import java.util.Random;
 
 /**
- * <p>
  * The {@code RandomUtil} class provides methods to generate random
  * number and random sequences of numbers and methods for shuffling the
  * arrays.
- * </p>
  */
 public class RandomUtil {
 

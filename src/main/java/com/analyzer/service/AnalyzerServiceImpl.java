@@ -21,11 +21,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * <p>
  * The {@code AnalyzerServiceImpl} is a basic implementation of {@link AnalyzerService} interface.
  * Utilizes the {@link Reflections} API to scan and retrieve all methods annotated with {@link Filler}
  * and {@link Sorter} annotations in order to compute {@link Statistics} object.
- * </p>
  */
 public class AnalyzerServiceImpl implements AnalyzerService {
     private static final Logger LOG = LoggerFactory.getLogger(AnalyzerServiceImpl.class);

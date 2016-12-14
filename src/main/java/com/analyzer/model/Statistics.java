@@ -8,10 +8,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * <p>
  * The {@code Statistics} data type describes overall performance of the specific sort
  * algorithm {@link Sort} depending on respective array generation strategy {@link Fill}.
- * </p>
  */
 public class Statistics {
     private Map<String, SortStatistics> statistics;

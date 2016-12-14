@@ -1,10 +1,8 @@
 package com.analyzer.util;
 
 /**
- * <p>
  * The {@code Stopwatch} data type is used to measure the CPU time that
  * elapses between the start and end of a programming task.
- * </p>
  */
 public class Stopwatch {
     private final Long start;

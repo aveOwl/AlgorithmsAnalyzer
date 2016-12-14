@@ -3,10 +3,8 @@ package com.analyzer.model;
 import com.analyzer.sorts.Sort;
 
 /**
- * <p>
  * The {@code Record} data type describes a single unit of {@link Sort} algorithm performance
  * containing information about number of elements in the array and CPU time taken to sort the array.
- * </p>
  */
 public class Record {
     private Long elapsedTime;
