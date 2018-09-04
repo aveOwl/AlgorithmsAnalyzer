@@ -2,8 +2,8 @@ package com.analyzer.sorts
 
 import com.analyzer.generators.impl.AscendingArrayFill
 import com.analyzer.generators.impl.DescendingArrayFill
-import com.analyzer.generators.impl.RandomLastElementFill
 import com.analyzer.generators.impl.RandomArrayFill
+import com.analyzer.generators.impl.RandomLastElementFill
 import com.analyzer.sorts.impl.*
 import spock.lang.Specification
 

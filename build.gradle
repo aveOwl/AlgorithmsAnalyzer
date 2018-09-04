@@ -1,3 +1,11 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'jacoco'
+    id 'groovy'
+    id 'com.github.kt3k.coveralls' version '2.6.3'
+}
+
 group 'Analyzer'
 version '1.0-SNAPSHOT'
 
@@ -32,4 +40,10 @@ dependencies {
     compile "org.apache.poi:poi-ooxml:$apachePoiVersion"
 
     testCompile "org.spockframework:spock-core:$spockVersion"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+    }
 }

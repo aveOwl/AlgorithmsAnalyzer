@@ -131,13 +131,13 @@ public class AnalyzerServiceImpl implements AnalyzerService {
      */
     private List<Method> getMethodsAnnotatedWith(Class<?> anInterface, Class<? extends Annotation> annotation) {
         LOG.debug("In classes of type: {} searching for methods annotated with: {} annotation",
-                  anInterface.getSimpleName(),
-                  annotation.getSimpleName());
+                anInterface.getSimpleName(),
+                annotation.getSimpleName());
         return this.reflections.getSubTypesOf(anInterface)
-                               .stream()
-                               .map(Class::getDeclaredMethods)
-                               .flatMap(Arrays::stream)
-                               .filter(method -> method.isAnnotationPresent(annotation))
-                               .collect(Collectors.toList());
+                .stream()
+                .map(Class::getDeclaredMethods)
+                .flatMap(Arrays::stream)
+                .filter(method -> method.isAnnotationPresent(annotation))
+                .collect(Collectors.toList());
     }
 }

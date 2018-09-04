@@ -30,11 +30,11 @@ public class QuickSort implements Sort {
 
         while (true) {
             // find item on the left to swap
-            while (this.less(a[++ i], a[left])) {
+            while (this.less(a[++i], a[left])) {
                 if (i == right) break;
             }
             // find item on the right to swap
-            while (this.less(a[left], a[-- j])) {
+            while (this.less(a[left], a[--j])) {
                 if (j == left) break;
             }
 

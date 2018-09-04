@@ -116,7 +116,7 @@ public class XSSFServiceImpl implements XSSFService {
                 sortSignatureRowIndex++;
             }
             LOG.debug("Drawing chart for {}", fillName);
-            this.drawChart(sheet, -- sortSignatureRowIndex, -- dataColumnIndex);
+            this.drawChart(sheet, --sortSignatureRowIndex, --dataColumnIndex);
         }
         this.saveWorkbook(workbook, path.resolve(FILE_NAME + LocalDateTime.now() + FILE_FORMAT));
     }
@@ -258,7 +258,7 @@ public class XSSFServiceImpl implements XSSFService {
             ScatterChartSeries series = data.addSerie(x, y);
 
             this.setSeriesSortSignature(sheet, series, rowIndex);
-            -- rowIndex;
+            --rowIndex;
         }
     }
 

@@ -22,7 +22,7 @@ public class RandomArrayFill implements Fill {
     public Comparable[] generate(Integer capacity) {
         Comparable[] array = new Comparable[capacity];
         for (int i = 0; i < capacity; )
-            array[i] = ++ i;
+            array[i] = ++i;
         RandomUtil.shuffle(array);
         return array;
     }
