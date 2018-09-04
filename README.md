@@ -1,4 +1,8 @@
 # Sorting techniques performance analyzer
+[![Build Status](https://travis-ci.org/aveowl/AlgorithmsAnalyzer.svg?branch=master)](https://travis-ci.org/aveowl/AlgorithmsAnalyzer)
+[![Coverage Status](https://coveralls.io/repos/github/aveowl/AlgorithmsAnalyzer/badge.svg?branch=master)](https://coveralls.io/github/aveowl/AlgorithmsAnalyzer?branch=master)
+
+# About
 * Sort algorithms:
   * BubbleSort
   * SelectionSort
